@@ -40,3 +40,12 @@ function outer(){
 const closures=outer();
 closures()
 closures()
+
+
+fetch("/user")
+.then(res=>{res.json()})
+.then(data=>{console.log(data)})
+.catch(error=>{console.log(error)})
+.finally(()=>{
+    console.log("Executed")
+})
