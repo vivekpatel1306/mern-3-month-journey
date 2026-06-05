@@ -29,23 +29,43 @@ const sum =numbers.reduce(
 //     }
 // }
 
+// function outer(){
+//     let a=1;
+//     function inner(){
+//         a++;
+//         console.log(a)
+//     }
+//      return inner
+// }
+// const closures=outer();
+// closures()
+// closures()
+
+
+// fetch("/user")
+// .then(res=>{res.json()})
+// .then(data=>{console.log(data)})
+// .catch(error=>{console.log(error)})
+// .finally(()=>{
+//     console.log("Executed")
+// })
+
+// function greet(){
+//     console.log("Hi vivek")
+// }
+// function fn(hi){
+//  hi()
+// }
+// fn(greet)
+
 function outer(){
-    let a=1;
-    function inner(){
-        a++;
-        console.log(a)
-    }
-     return inner
+    let a=0;
+function inner(){
+    a++
+    console.log(a)
 }
-const closures=outer();
-closures()
-closures()
-
-
-fetch("/user")
-.then(res=>{res.json()})
-.then(data=>{console.log(data)})
-.catch(error=>{console.log(error)})
-.finally(()=>{
-    console.log("Executed")
-})
+return inner
+}
+const counter=outer()
+counter()
+counter()

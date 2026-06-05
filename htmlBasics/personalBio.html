@@ -1,253 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+    name="description"
+    content="Portfolio of Vivek Patel, a MERN Stack Developer specializing in React, Node.js, Express.js, and MongoDB."
+    >
+    <meta
+    name="keyowrds",
+    content="MERN Developer, Software Developer, FullStack Developer, Javascript"
+    >
+    <meta
+    name="author",
+    content="Vivek Pate;"
+    >
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-:root{
---primary:#2563eb;
---secondary:#1e293b;
---accent:#38bdf8;
---bg:#f8fafc;
---text:#1f2937;
---white:#ffffff;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.6;
-}
-
-header{
-position:sticky;
-top:0;
-background:var(--secondary);
-color:white;
-padding:1rem;
-z-index:1000;
-}
-
-header h1{
-text-align:center;
-}
-
-nav{
-display:flex;
-justify-content:center;
-gap:1rem;
-margin-top:10px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-padding:8px 12px;
-border-radius:6px;
-transition:0.3s;
-}
-
-nav a:hover{
-background:var(--accent);
-transform:translateY(-2px);
-}
-
-section{
-padding:3rem 1rem;
-}
-
-article{
-display:flex;
-flex-direction:column;
-gap:1rem;
-align-items:center;
-}
-
-article img{
-width:250px;
-border-radius:12px;
-transition:0.3s;
-}
-
-article img:hover{
-transform:scale(1.05);
-}
-
-/* CSS Grid */
-#projects table{
-width:100%;
-border-collapse:collapse;
-background:white;
-}
-
-#projects th,
-#projects td{
-padding:12px;
-border:1px solid #ddd;
-}
-
-#projects tr:hover
-
-/* Buttons */
-button{
-background:var(--primary);
-color:white;
-border:none;
-padding:12px 20px;
-cursor:pointer;
-border-radius:8px;
-transition:0.3s;
-}
-
-button:hover{
-background:var(--accent);
-transform:translateY(-3px);
-}
-
-input,
-textarea{
-width:100%;
-padding:10px;
-border:1px solid #ccc;
-border-radius:8px;
-}
-
-form{
-max-width:500px;
-}
-
-/* Tablet */
-@media(min-width:768px){
-
-article{
-flex-direction:row;
-justify-content:space-between;
-}
-
-#skills ul{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
-}
-
-/* Desktop */
-@media(min-width:1024px){
-
-main{
-width:80%;
-margin:auto;
-}
-
-#skills ul{
-grid-template-columns:repeat(3,1fr);
-}
-}
-
-/* Fade Animation */
-section{
-animation:fadeIn 1s ease;
-}
-
-img{
-    height: 40px;
-    width: 60px;
-}
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:var(--secondary);
-color:white;
-}
-
-</style>
 <body>
     <header>
-        <h1>Vivek Patel</h1>
-        <Nav>
+        <div>
+            <h1>Vivek.dev</h1>
+        </div>
+        <div>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </Nav>
+            <a href="#project">Project</a>
+            <a href="#contact-form">Contact Form</a>
+            <button id="theme-toggle">dark</button>
+        </div>
     </header>
     <main>
-        <section id="about">
-            <h1>About Me</h1> 
-            <img src="/mern-3-month-journey/vivek.jpg" alt="Vivek's Image"><br>
-            <a href="https://github.com/vivekpatel1306/mern-3-month-journey#">Github</a>
-            <p>I am passionate MERN developer having expertise in HTML5, CSS3, Javascript, ReactJs, Express, Node and Mongodb.I really enjoy designing websites and developing them for helping real world project</p>
-        </section>
-        <section id="skills">
-            <h1>Skills</h1>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Javascript</li>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>MongoDB</li>
-                <li>Express.js</li>
-            </ul>
-        </section>
-        <section id="projects">
-            <table>
-                <tr>
-                    <th>Project Name</th>
-                    <th>Technology</th>
-                </tr>
-                <tr>
-                    <td>Ai Based Blogging app</td>
-                    <td>MERN</td>
-                </tr>
-                <tr>
-                    <td>Movie Buddy</td>
-                    <td>MERN</td>
-                </tr>
-            </table>
-        </section>
-        <section id="contact">
-            <h1>Contact Us</h1>
-           <form action="#">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" ><br>
-
-            <label for="email">Email:</label>
-            <input type="text" name="email"><br>
-            <button type="submit">send Message </button>
+        <section id="#hero">
+            <div>
+                <h1>I'm Vivek Patel A Software Developer</h1>
+            </div>
             
-           </form>
+            <div>
+                <img src="vivek.jpg" alt="Vivek's image">
+            </div>
         </section>
-    </main>
+
+        <section id="about">
+            <p>I'm a passionate Software Deveoper who reaally enjoy to solve real world problems using technologies. I
+                have expertise in HTML, CSS, Javascript, React.js, Express.js, Node.js, MongoDB and ElectronJS </p>
+        </section>
+
+        <section id="skills">
+            <div>
+                <div>⚛️React.js</div>
+                <div>🚀Express.js</div>
+                <div>🟢Node.js</div>
+                <div>🍃MongoDB</div>
+                <div>🎨 ElectronJS</div>
+                <div>🛠️Git&Github</div>
+                <div>🔗Rest APIs</div>
+                <div>📜HTML&CSS</div>
+            </div>
+        </section>
+
+        <section id="project">
+            <div>
+                <h1>AI Blogging Application</h1>
+                <p>An AI-powered blog platform that generates content ideas using OpenAI API, with full MERN stack
+                    authentication, CRUD, and rich text editor.</p>
+            </div>
+            <div>
+                <h1>Movie Buddy</h1>
+                <p>Discover trending movies, watchlists, and real-time ratings. Integrated TMDB API, user profiles, and
+                    personalized recommendations.</p>
+            </div>
+            <div>
+                <h1>Shopiee</h1>
+                <p>In my website we can purchase daily usage products and there is admin panel also which helps to
+                    manage their shop.</p>
+            </div>
+        </section>
+
+        <section id="contact-form">
+            
+                <form id="contactForm">
+                    <input id="name" type="text" placeholder="Name">
+                    <input id="email" type="text" placeholder="Email">
+                    <input id="message" type="text" placeholder="Message">
+                    <button id="submit" type="submit">Submit</button>
+                </form>
+            
+        </section>
+    </main> 
     <footer>
-        <p>All copyright reserved to VivekPatel</p>
+        <p>&copy; 2026 Vivek Patel. All Rights Reserved to Owner</p>
     </footer>
 </body>
+<script src="concept.js"></script>
+
 </html>
