@@ -7,3 +7,7 @@ date-4/6/26
 Working of personal pertfolio and learnt all the advanced topics 
 date-5/6/26
 Toady built the full responsive website and started learning React
+date-6/6/26
+Today i have built my portfolio website
+date-6/6/26
+Today i have started revisting React topics
