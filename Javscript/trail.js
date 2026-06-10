@@ -58,14 +58,29 @@ const sum =numbers.reduce(
 // }
 // fn(greet)
 
+// function outer(){
+//     let a=0;
+// function inner(){
+//     a++
+//     console.log(a)
+// }
+// return inner
+// }
+// const counter=outer()
+// counter()
+// counter()
+
+let b=9
+
 function outer(){
-    let a=0;
-function inner(){
-    a++
-    console.log(a)
+    let a=80;
+    function inner(){
+        b++
+        console.log(b)
+    }
+    return inner
 }
-return inner
-}
-const counter=outer()
-counter()
-counter()
+
+const closure=outer()
+closure()
+closure()
