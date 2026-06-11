@@ -84,3 +84,4 @@ function outer(){
 const closure=outer()
 closure()
 closure()
+

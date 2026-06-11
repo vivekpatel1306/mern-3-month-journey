@@ -13,3 +13,5 @@ date-6/6/26<br>
 Today i have started revisting React topics.<br>
 date-9/6/26<br>
 Today i have learned bascis of react <br> 
+date-10/6/26<br>
+Today i built weather application and also added map  <br> 
