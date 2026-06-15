@@ -1,8 +1,8 @@
-const numbers=[4,5,6,7]
-const sum =numbers.reduce(
-    (acc, curr) => acc + curr,
-    0
-);
+// const numbers=[4,5,6,7]
+// const sum =numbers.reduce(
+//     (acc, curr) => acc + curr,
+//     0
+// );
 
 // console.log(sum);
 
@@ -70,18 +70,103 @@ const sum =numbers.reduce(
 // counter()
 // counter()
 
-let b=9
+// let b=9
 
-function outer(){
-    let a=80;
-    function inner(){
-        b++
-        console.log(b)
-    }
-    return inner
+// function outer(){
+//     var a=80;
+//     function inner(){
+//         a++
+//         console.log(a)
+//     }
+//     return inner
+// }
+
+// const closure=outer()
+// closure()
+// closure()
+
+// const user = {
+//   name: "Vivek",
+
+//   greet: () => {
+//     console.log(this.name);
+//   }
+// };
+
+// user.greet();
+
+// function Person() {
+//   let age = 0;
+
+//   setInterval( ()=> {
+//     this.age++;
+//     console.log(this.age)
+//   }, 1000);
+// }
+
+
+// function outer() {
+//   console.log(this);
+
+//   const inner = () => {
+//     console.log(this);
+//   };
+
+//   inner();
+// }
+
+// outer();
+
+// const count=0;
+// function Counter() {
+//   this.count = 0;
+
+//   setInterval(() => {
+//     this.count++;
+//     console.log(this.count);
+//   }, 1000);
+// }
+
+// new Counter();
+
+// function Counter() {
+//   this.count = 0;
+
+//   setInterval(function () {
+//     this.count++;
+//     console.log(this.count);
+//   }, 1000);
+// }
+
+// new Counter();
+
+// function createCounter() {
+//   let count = 0;
+
+//   return {
+//     increment() {
+//       count++;
+//     },
+//     getCount() {
+//       return count;
+//     }
+//   };
+// }
+
+// const counter = createCounter();
+
+// counter.increment();
+// counter.increment();
+
+// console.log(counter.getCount());
+
+function a(name){
+this.name=name
 }
+a.prototype.say=function b(){
+  console.log("first"+this.name)
+}
+const define=new a("vivek")
+define.say() 
 
-const closure=outer()
-closure()
-closure()
-
+const 

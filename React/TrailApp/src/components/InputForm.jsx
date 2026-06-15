@@ -23,7 +23,7 @@ export default function InputForm(){
         <form onSubmit={Submit}>
         <input type="email" name="email" onChange={update} placeholder="ENter mail" />
         <input type="text" name="name" onChange={update} placeholder="Enter name" />
-        <button type="" >Submit</button>
+        <button type="submit" >Submit</button>
         </form>
        <h1>{input.name}</h1>
        <h1>{input.email}</h1>
