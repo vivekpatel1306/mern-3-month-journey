@@ -19,3 +19,7 @@ date-11/6/26<br>
 Today i built weather application and also added map and built todo app  <br> 
 date-12/6/26<br>
 Today i prepared myself for review<br> 
+date-15/6/26<br>
+Today i have covered context api,react memo and useCallback <br> 
+date-17/6/26<br>
+Today i have gone through all the hooks and covered all concepts<br> 
