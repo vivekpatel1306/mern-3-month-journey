@@ -23,3 +23,7 @@ date-15/6/26<br>
 Today i have covered context api,react memo and useCallback <br> 
 date-17/6/26<br>
 Today i have gone through all the hooks and covered all concepts<br> 
+date-18/6/26<br>
+Today i have learnt about RTK<br> 
+date-19/6/26<br>
+Today i have implemented RTK Learnt ci/cd media storage<br> 
