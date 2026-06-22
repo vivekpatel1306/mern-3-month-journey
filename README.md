@@ -27,3 +27,5 @@ date-18/6/26<br>
 Today i have learnt about RTK<br> 
 date-19/6/26<br>
 Today i have implemented RTK Learnt ci/cd media storage<br> 
+date-20/6/26<br>
+Today i  will build movie application<br> 
