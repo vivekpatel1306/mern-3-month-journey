@@ -1,9 +1,9 @@
 export default function Gchild(a){
     return(
         <><br />
-        heloo Gchild
+        {/* heloo Gchild
      {a.name}
-     {a.age}
+     {a.age} */}
         </>
     )
 }

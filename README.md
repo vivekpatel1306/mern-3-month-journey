@@ -29,3 +29,10 @@ date-19/6/26<br>
 Today i have implemented RTK Learnt ci/cd media storage<br> 
 date-20/6/26<br>
 Today i  will build movie application<br> 
+date-22/6/26<br>
+Today i have completed building of movie application<br> 
+date-23/6/26<br>
+Today i  will learn websoket and try to implement it<br> 
+date-24/6/26<br>
+Today i  have tried implement websoket<br> 
+    
