@@ -6,14 +6,16 @@ import './App.css'
 import Parent from './components/Parent'
 import Child from './components/Child'
 import Gchild from './components/Gchild'
+import Dashboard from './components/Task'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Parent/>
+    <Dashboard/>
+    {/* <Parent/> */}
     {/* <Child/> */}
-    <Gchild/>
+    {/* <Gchild/> */}
     </>
   )
 }
