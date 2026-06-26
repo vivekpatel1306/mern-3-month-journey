@@ -2,21 +2,8 @@ import React, { useState, useMemo, useCallback } from 'react';
 
 // 1. REACT.MEMO: Prevents the task list from re-rendering 
 // unless its props (tasks or onDelete) actually change.
-const TaskList = ({ tasks, onDelete }) => {
-  console.log("🎨 TaskList1 Rendered!");
-  return (
-    <ul>
-      {tasks.map((task) => (
-        <li key={task.id}>
-          {task.text} <button onClick={() => onDelete(task.id)}>❌</button>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-const TaskLists = React.memo(({ tasks, onDelete }) => {
-  console.log("🎨 TaskList2 Rendered!");
+const TaskList = React.memo(({ tasks, onDelete }) => {
+  // console.log("🎨 TaskList Rendered!");
   return (
     <ul>
       {tasks.map((task) => (
@@ -27,11 +14,8 @@ const TaskLists = React.memo(({ tasks, onDelete }) => {
     </ul>
   );
 });
+
 export default function Dashboard() {
-  const [task, setTask] = useState([
-    { id: 1, text: "Buy groceries" },
-    { id: 2, text: "Clean the room" }
-  ]);
   const [tasks, setTasks] = useState([
     { id: 1, text: "Buy groceries" },
     { id: 2, text: "Clean the room" }
@@ -39,18 +23,19 @@ export default function Dashboard() {
   const [darkTheme, setDarkTheme] = useState(true);
   const [input, setInput] = useState("");
 
-  // FIX 1: Added [tasks] so it recalculates when the task list changes
+  // 2. USEMEMO: Caches the result of a computationally expensive operation
   const analyticsSummary = useMemo(() => {
     console.log("⚡ Running heavy analytics calculation...");
+    // Simulating a heavy CPU-intensive loop
     for (let i = 0; i < 100000000; i++) {} 
-    return `Total Tasks Monitored: ${tasks.length * 2}`; 
-  }, [tasks]); 
+    return `Total Tasks Monitored: ${tasks.length * 42}`; 
+  }, [tasks]); // Only re-runs when 'tasks' changes
 
-  // FIX 2: Changed useMemo to useCallback so it returns a clickable function
+  // 3. USECALLBACK: Caches the function definition itself 
+  // so it doesn't get re-created on every single render.
   const deleteTask = useCallback((id) => {
     setTasks((prevTasks) => prevTasks.filter(task => task.id !== id));
-    console.log("Task deleted!");
-}, []); // Empty array is fine here because we use the functional updater form of setState
+  }, []); // Empty dependency array means this function reference never changes
 
   const addTask = () => {
     if (!input) return;
@@ -69,8 +54,7 @@ export default function Dashboard() {
       </div>
 
       <h3>{analyticsSummary}</h3>
-      <TaskList tasks={task} onDelete={deleteTask} />
-      <TaskLists tasks={tasks} onDelete={deleteTask} />
+      <TaskList tasks={tasks} onDelete={deleteTask} />
     </div>
   );
 }
