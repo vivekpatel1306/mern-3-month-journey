@@ -160,13 +160,98 @@
 
 // console.log(counter.getCount());
 
-function a(name){
-this.name=name
-}
-a.prototype.say=function b(){
-  console.log("first"+this.name)
-}
-const define=new a("vivek")
-define.say() 
+// function a(name){
+// this.name=name
+// }
+// a.prototype.say=function b(){
+//   console.log("first "+this.name)
+// }
+// const define=new a("vivek")
+// define.say() 
 
-const 
+
+// const watch=new  Promise((resolve,reject)=>{
+//   const completed=true;
+//   if (completed){
+//     resolve("Done")
+//   }
+//   else{
+//     reject("Not Done")
+//   }
+// })
+
+// watch.then((msg)=>{
+// console.log(msg)
+// }).catch((error)=>{
+//   console.log(error)
+// })
+
+
+// const data={
+//   name:"vivek",
+//   age:23
+
+// }
+// const datas={
+//   salary:1000000,
+//   age:23
+
+// }
+
+// data.__proto__=datas
+// const d=new data;
+// console.log(d.salary)
+
+// greet()
+// greet.apply(data,[20,"vivek"])
+
+// console.log(greet)
+// var greet=()=>{
+//   console.log(`name : ${this.name} and age is : ${this.age}`)
+// }
+
+
+// function nameD(name){
+//   return name
+// }
+
+// function data(d){
+//   console.log(d)
+// }
+// data(nameD("vivek"))
+
+
+// const arr=[1,2,3]
+// const arr1=arr.map(a=>a*2)
+// arr1.push(8)
+// console.log(arr)
+// console.log(arr1)
+
+// console.log(arr2)
+// console.log(arr)
+// console.log( arr.filter(a=>a>1))
+// console.log( arr.reduce((a,b)=>a+b))
+
+// function multiply(a) {
+//   return function (b) {
+//     return a * b;
+//   };
+// }
+// multiply(4)(1)
+// console.log(multiply(5)(2));
+
+
+// function add(a){
+//   console.log(a)
+//   return function (b){
+//     console.log(a)
+//     return function(c){
+//       console.log(a)
+//     }
+//   }
+// }
+// const closure=add(2)(3)
+// // add(5)(2)
+// closure()
+
+ 
