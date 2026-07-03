@@ -39,6 +39,6 @@ date-25/6/26<br>
 Today i  have completed websoket project<br> 
 date-26/6/26<br>
 Today i  have started backend<br> 
-date-29/6/26<br>
-Today i  have leraned testing frameworks aand <br> 
+date-29/6/26-3/7/26<br>
+Today i  prepared for mock <br> 
     

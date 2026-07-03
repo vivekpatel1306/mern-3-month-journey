@@ -1,13 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>CSS Positioning Playground</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 2000px; /* Forces page scroll to see Fixed and Sticky work */
+      background: #f4f4f9;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border: 2px dashed #ccc;
+      /* CRITICAL: This relative parent acts as the boundary reference 
+        for any ABSOLUTE children nested inside it.
+      */
+      position: relative; 
+    }
+
+    .box {
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    /* 1. RELATIVE POSITIONING */
+    .relative-box {
+      background-color: #2196F3; /* Blue */
+      position: relative;
+      top: 20px;
+      left: 30px;
+      /* Leaves a "ghost space" where it originally belonged. 
+        Shifts 20px down and 30px right from its normal starting point.
+      */
+    }
+
+    /* 2. ABSOLUTE POSITIONING */
+    .absolute-box {
+      background-color: #E91E63; /* Pink */
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 180px;
+      /* Completely ripped out of the document flow. Space collapses.
+        It pins itself to the top-right corner of the '.container' parent.
+      */
+    }
+
+    /* 3. STICKY POSITIONING */
+    .sticky-box {
+      background-color: #FF9800; /* Orange */
+      position: sticky;
+      top: 0; 
+      /* Sits normally in the layout until you scroll down.
+        As soon as it touches the top (0px) of the screen, it freezes there.
+      */
+    }
+
+    /* 4. FIXED POSITIONING */
+    .fixed-box {
+      background-color: #4CAF50; /* Green */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 150px;
+      /* Ignores all parents. Glued permanently to the browser viewport window.
+        Stays in the bottom right corner even if you scroll up or down.
+      */
+    }
+
+    /* Placeholder text box just to fill space inside the container */
+    .normal-box {
+      background-color: #9E9E9E;
+    }
+  </style>
 </head>
 <body>
-    <h1 style="display: none;">hi</h1>
-    <h1>hi</h1>
-    <h1>hi</h1>
+
+  <div class="container">
+    <h2>Parent Container (Position: Relative)</h2>
+    <p>Scroll down to see the sticky and fixed elements in action!</p>
+
+    <div class="box normal-box">1. Static Box (Normal Layout Flow)</div>
+
+    <div class="box relative-box">
+      2. Relative Box <br>
+      <small>(Shifted down 20px, left 30px. Notice the empty space left behind below me.)</small>
+    </div>
+
+    <div class="box normal-box">3. Static Box (Unaffected by relative shift)</div>
+
+    <div class="box sticky-box">
+      4. Sticky Box <br>
+      <small>(Scroll down! I will stick to the very top of the window.)</small>
+    </div>
+
+    <div class="box normal-box" style="height: 300px;">
+      5. Tall Content Box <br>
+      <small>(Keep scrolling to test the sticky header above.)</small>
+    </div>
+
+    <div class="box absolute-box">
+      6. Absolute Box <br>
+      <small>(Floating in the top-right corner of the outer boundary box.)</small>
+    </div>
+  </div>
+
+  <div class="box fixed-box">
+    7. Fixed Box <br>
+    <small>(I am glued to the window corner regardless of scrolling.)</small>
+  </div>
+
 </body>
 </html>
