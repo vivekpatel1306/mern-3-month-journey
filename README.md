@@ -45,4 +45,10 @@ date-6/7/26<br>
 Today i  have Learnt redux thunk<br> 
 date-7/7/26<br>
 Today i  have learnt and built basics of backend<br> 
+date-8/7/26<br>
+Today i  have implemented backend logics manually<br> 
+date-9/7/26<br>
+Today i  have implemented authentication<br> 
+date-10/7/26<br>
+Today i  have implemented authentication and authorization<br> 
     
