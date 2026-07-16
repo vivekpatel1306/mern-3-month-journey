@@ -7,6 +7,7 @@ import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import {BrowserRouter, Routes ,Route} from "react-router-dom"
 import { Home } from "./components/Home";
+import { AllTodos } from "./components/Todos";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="register" element={<Register />} />
+          <Route path="notes" element={<AllTodos />} />
         </Routes>
       </BrowserRouter>
 

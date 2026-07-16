@@ -5,6 +5,7 @@ export const Home = () => {
     <h1>hi</h1>
       <Link to="/login">Login</Link>
       <Link to="/register">Register</Link>
+      <Link to="/notes">All todo</Link>
     </>
   );
 };

@@ -11,11 +11,16 @@ export const Login = () => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-      const res = API.post("/auth/login", info);
-      console.log("USer logged in successfully");
+      const res =await API.post("/auth/login", info, {
+        withCredentials: true,
+      });
+      console.log(res.data);
+      if (res.data) {
+        console.log(res.data.token);
+      }
     } catch (error) {
       alert(message);
     }

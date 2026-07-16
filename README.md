@@ -34,7 +34,7 @@ Today i have completed building of movie application<br>
 date-23/6/26<br>
 Today i  will learn websoket and try to implement it<br> 
 date-24/6/26<br>
-Today i  have tried implement websoket<br> 
+Today i  have tried implemention of websoket<br> 
 date-25/6/26<br>
 Today i  have completed websoket project<br> 
 date-26/6/26<br>

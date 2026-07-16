@@ -14,6 +14,7 @@ export const readAll = async (req, res) => {
     try {
         const note = await Note.find();
         res.status(201).json(note)
+        console.log("first")
     } catch (error) {
         res.status(500).json({
             message: error.message
@@ -28,6 +29,7 @@ export const readOne = async (req, res) => {
             res.status(404).json({
                 message: "No notes Found"
             })
+            console.log(`notes : ${note}`)
         }
         res.status(201).json(note)
     } catch (error) {

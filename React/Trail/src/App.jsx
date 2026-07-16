@@ -1,23 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import Parent from './components/Parent'
-import Child from './components/Child'
-import Gchild from './components/Gchild'
-import Dashboard from './components/Task'
-function App() {
-  const [count, setCount] = useState(0)
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Home} from "./Home";
+import {Profile} from "./Profile";
 
+function App() {
   return (
-    <>
-    <Dashboard/>
-    {/* <Parent/> */}
-    {/* <Child/> */}
-    {/* <Gchild/> */}
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

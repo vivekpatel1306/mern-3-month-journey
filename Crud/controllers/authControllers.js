@@ -1,4 +1,4 @@
-import generateToken from "../utils/generateTokens.js";
+import {generateToken as gt} from "../utils/generateTokens.js";
 import User from "../models/User.js";
 import bcrypt from "bcrypt"
 export const register = async (req, res) => {
@@ -25,7 +25,7 @@ export const register = async (req, res) => {
 
         res.status(200).json({
             message: "USer created Successfully",
-            token: generateToken(user._id),
+            // token: gt(user._id,user.email),
             user: {
                 name: user.name,
                 id: user._id,
@@ -34,7 +34,7 @@ export const register = async (req, res) => {
         })
     } catch (error) {
         res.status(500).json({
-            message: "error.message"
+            message: error.message
         })
     }
 }
@@ -63,9 +63,15 @@ export const login = async (req, res) => {
             })
         }
 
-        res.status(201).json({
-            message: "User succesfully logged in ",
-            token: generateToken(user._id),
+        const generatedToken=await gt(user._id)
+
+        res.status(201).cookie("token", generatedToken, { 
+             httpOnly: true,
+             secure: true,
+             sameSite: "Lax" }).
+        json({
+            message: "User succesfully logged innn ",
+            token:generatedToken ,
             user: {
                 id: user._id,
                 email: user.email,
