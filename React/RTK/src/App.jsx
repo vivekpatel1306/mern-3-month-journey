@@ -14,7 +14,7 @@ export default function App() {
     useSelector(
       state => state.counter.value
     );
-
+console.log(count)
   const dispatch =
     useDispatch();
 

@@ -4,6 +4,7 @@ import { decrement, increment } from './counterSlice'
 
 export function Counter() {
   const count = useSelector((state) => state.counter.value)
+  console.log(count)
   const dispatch = useDispatch()
 
   return (

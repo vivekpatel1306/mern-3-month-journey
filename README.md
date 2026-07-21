@@ -53,4 +53,15 @@ date-10/7/26<br>
 Today i  have implemented authentication and authorization<br> 
 date-13/7/26<br>
 Today i  have review<br> 
-    
+date-14/7/26<br>
+Today i  learnt api designing<br> 
+date-15/7/26<br>
+Today i  middleware,react state management and error handling<br> 
+date-16/7/26<br>
+Today i  learnt debugging, error handling and axios<br> 
+date-17/7/26<br>
+Today i  have built fullsatck with authentication<br> 
+date-20/7/26<br>
+Today i  have review and learnt react fiber got to learn worker thread, redis ,logger<br> 
+date-21/7/26<br>
+Today i  have learnt mongodb and learning to query and db performance enhancer<br> 

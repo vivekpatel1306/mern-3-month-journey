@@ -2,123 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CSS Positioning Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart-style Image Slider</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      height: 2000px; /* Forces page scroll to see Fixed and Sticky work */
-      background: #f4f4f9;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
       padding: 20px;
-      background: white;
-      border: 2px dashed #ccc;
-      /* CRITICAL: This relative parent acts as the boundary reference 
-        for any ABSOLUTE children nested inside it.
-      */
-      position: relative; 
+      background-color: #f1f3f6;
+      display: flex;
+      justify-content: center;
     }
 
-    .box {
-      width: 100%;
-      padding: 15px;
-      margin: 15px 0;
-      color: white;
-      font-weight: bold;
-      border-radius: 5px;
+    /* Carousel Wrapper */
+    .carousel-container {
+      position: relative;
+      width: 800px;
+      max-width: 100%;
+    }
+
+    /* 1. The Slider Row */
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      /* Configures snap alignment horizontally */
+      scroll-snap-type: x mandatory; 
+      /* Hides the scrollbar across browsers */
+      scrollbar-width: none; 
+    }
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* 2. Individual Poster Cards */
+    .slide {
+      flex: 0 0 100%; /* Each image takes full width of container */
+      scroll-snap-align: start; /* Snaps the image perfectly in place */
       box-sizing: border-box;
     }
 
-    /* 1. RELATIVE POSITIONING */
-    .relative-box {
-      background-color: #2196F3; /* Blue */
-      position: relative;
-      top: 20px;
-      left: 30px;
-      /* Leaves a "ghost space" where it originally belonged. 
-        Shifts 20px down and 30px right from its normal starting point.
-      */
+    .slide img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
     }
 
-    /* 2. ABSOLUTE POSITIONING */
-    .absolute-box {
-      background-color: #E91E63; /* Pink */
+    /* 3. Navigation Controls */
+    .nav-btn {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 180px;
-      /* Completely ripped out of the document flow. Space collapses.
-        It pins itself to the top-right corner of the '.container' parent.
-      */
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      color: #333;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+      width: 40px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      border-radius: 4px;
+      z-index: 10;
     }
 
-    /* 3. STICKY POSITIONING */
-    .sticky-box {
-      background-color: #FF9800; /* Orange */
-      position: sticky;
-      top: 0; 
-      /* Sits normally in the layout until you scroll down.
-        As soon as it touches the top (0px) of the screen, it freezes there.
-      */
-    }
-
-    /* 4. FIXED POSITIONING */
-    .fixed-box {
-      background-color: #4CAF50; /* Green */
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 150px;
-      /* Ignores all parents. Glued permanently to the browser viewport window.
-        Stays in the bottom right corner even if you scroll up or down.
-      */
-    }
-
-    /* Placeholder text box just to fill space inside the container */
-    .normal-box {
-      background-color: #9E9E9E;
-    }
+    .prev { left: 0; }
+    .next { right: 0; }
+    .nav-btn:hover { background-color: #f9f9f9; }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h2>Parent Container (Position: Relative)</h2>
-    <p>Scroll down to see the sticky and fixed elements in action!</p>
+  <div class="carousel-container">
+    <!-- The Slider Wrapper -->
+    <div class="slider">
+      <!-- Slide 1 -->
+      <div class="slide" id="img1">
+        <a href="#img3" class="nav-btn prev">&lsaquo;</a>
+        <img src="https://picsum.photos/800/300?random=1" alt="Poster 1">
+        <a href="#img2" class="nav-btn next">&rsaquo;</a>
+      </div>
 
-    <div class="box normal-box">1. Static Box (Normal Layout Flow)</div>
+      <!-- Slide 2 -->
+      <div class="slide" id="img2">
+        <a href="#img1" class="nav-btn prev">&lsaquo;</a>
+        <img src="https://picsum.photos/800/300?random=2" alt="Poster 2">
+        <a href="#img3" class="nav-btn next">&rsaquo;</a>
+      </div>
 
-    <div class="box relative-box">
-      2. Relative Box <br>
-      <small>(Shifted down 20px, left 30px. Notice the empty space left behind below me.)</small>
+      <!-- Slide 3 -->
+      <div class="slide" id="img3">
+        <a href="#img2" class="nav-btn prev">&lsaquo;</a>
+        <img src="https://picsum.photos/800/300?random=3" alt="Poster 3">
+        <a href="#img1" class="nav-btn next">&rsaquo;</a>
+      </div>
     </div>
-
-    <div class="box normal-box">3. Static Box (Unaffected by relative shift)</div>
-
-    <div class="box sticky-box">
-      4. Sticky Box <br>
-      <small>(Scroll down! I will stick to the very top of the window.)</small>
-    </div>
-
-    <div class="box normal-box" style="height: 300px;">
-      5. Tall Content Box <br>
-      <small>(Keep scrolling to test the sticky header above.)</small>
-    </div>
-
-    <div class="box absolute-box">
-      6. Absolute Box <br>
-      <small>(Floating in the top-right corner of the outer boundary box.)</small>
-    </div>
-  </div>
-
-  <div class="box fixed-box">
-    7. Fixed Box <br>
-    <small>(I am glued to the window corner regardless of scrolling.)</small>
   </div>
 
 </body>

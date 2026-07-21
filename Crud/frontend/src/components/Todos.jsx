@@ -29,25 +29,25 @@ export const AllTodos = () => {
     setTodo({ title: "", description: "" });
   };
 
-
-  const handleDelete=async(id)=>{
-    console.log(id)
-    const to=await API.delete(`/notes/${id}`)
-    fetchTodos()
+  const handleDelete = async (id) => {
+    console.log(id);
+    const to = await API.delete(`/notes/${id}`);
+    fetchTodos();
     // console.log(to.data.title)
-//   await setTodo({...todo,title:to.data.title,description:to.data.description})
+    //   await setTodo({...todo,title:to.data.title,description:to.data.description})
     // await API.put(`/notes/${id}`,todo)
     // console.log("todo :"+todo.title)
-  }
+  };
 
-  const handleEdit=async(titlee,desc)=>{
-setTodo({...todo,title:titlee,description:desc})
-  }
-const handleUpdate=async(id,title,description)=>{
-    const update=await API.put(`/notes/${id}`,todo)
-    console.log("Updated")
-    fetchTodos()
-}
+  const handleEdit = async (titlee, desc) => {
+    setTodo({ ...todo, title: titlee, description: desc });
+  };
+  
+  const handleUpdate = async (id, title, description) => {
+    const update = await API.put(`/notes/${id}`, todo);
+    console.log("Updated");
+    fetchTodos();
+  };
 
   return (
     <>
@@ -74,11 +74,14 @@ const handleUpdate=async(id,title,description)=>{
           <div key={d._id}>
             <p> {d.title}</p>
             <p> {d.description}</p>
-            <button onClick={()=>handleDelete(d._id)}>delete</button>
-            <button onClick={()=>handleEdit(d.title,d.description)}>edit</button>
-            <button onClick={()=>handleUpdate(d._id,d.title,d.description)}>update</button>
+            <button onClick={() => handleDelete(d._id)}>delete</button>
+            <button onClick={() => handleEdit(d.title, d.description)}>
+              edit
+            </button>
+            <button onClick={() => handleUpdate(d._id, d.title, d.description)}>
+              update
+            </button>
           </div>
-                   
         ))}
       </h1>
     </>
