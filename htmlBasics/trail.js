@@ -71,29 +71,29 @@
 // p.person.greet(); // Output: undefined
 
 
-var a = 9;
-const promise = new Promise((resolve, reject) => {
-  resolve(() => {
-    setTimeout(() => {
-      ab()
-    })
-    setTimeout(() => {
-      ab()
-    })
-    setTimeout(() => {
-      ab()
-    })
-  })
-})
-promise.then((run)=>{
-  run()
-})
-function ab() {
-  a++
-  console.log(a)
-}
+// var a = 9;
+// const promise = new Promise((resolve, reject) => {
+//   resolve(() => {
+//     setTimeout(() => {
+//       ab()
+//     })
+//     setTimeout(() => {
+//       ab()
+//     })
+//     setTimeout(() => {
+//       ab()
+//     })
+//   })
+// })
+// promise.then((run)=>{
+//   run()
+// })
+// function ab() {
+//   a++
+//   console.log(a)
+// }
 
-console.log(a)
+// console.log(a)
 // for (var i = 1; i <= 3; i++) {
 //   // setTimeout(() => {
 //     {
@@ -101,3 +101,13 @@ console.log(a)
 //     }
 //   // }, 1000);
 // }
+let data=null 
+async function getUser() 
+{ console.log("API call started"); 
+const response = await fetch("/api/user"); 
+
+data=response
+ console.log("API response received"); } 
+getUser(); 
+console.log("data",data)
+console.log("Other code runs");

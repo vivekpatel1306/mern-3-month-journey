@@ -65,3 +65,29 @@ date-20/7/26<br>
 Today i  have review and learnt react fiber got to learn worker thread, redis ,logger<br> 
 date-21/7/26<br>
 Today i  have learnt mongodb and learning to query and db performance enhancer<br> 
+date-22/7/26<br>
+Today i  have practised mongodb query<br> 
+date-23/7/26<br>
+Today i  have learnt about transaction flow and pm2<br> 
+date-24/7/26<br>
+Today i  have learned react query<br> 
+date-27/7/26<br>
+Today i  have review<br> 
+date-28/7/26<br>
+Today i working on my feedback <br> 
+date-31/7/26<br>
+Today i have started learning nextjs <br> 
+date-3/8/26<br>
+Today i will cover fundamentals and routing in nextjs <br> 
+date-4/8/26<br>
+Today i have my review in which i got some improvement <br> 
+date-5/8/26<br>
+Toady i will cover rendering, data fetching, server and client components and layouts<br> 
+date-6/8/26<br>
+Today i will learn about API routing and middleware in nextjs <br> 
+date-7/8/26<br>
+Today i worked on nextjs project <br> 
+date-10/8/26<br>
+Today i worked on next project<br> 
+date-11/8/26<br>
+Today i have started learning of GraphQL<br> 

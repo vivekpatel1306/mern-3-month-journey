@@ -1,16 +1,16 @@
-import {generateToken as gt} from "../utils/generateTokens.js";
+import { generateToken as gt } from "../utils/generateTokens.js";
 import User from "../models/User.js";
 import bcrypt from "bcrypt"
 export const register = async (req, res) => {
     try {
         const { email, name, password } = req.body;
-        console.log(email, name, password )
+        console.log(email, name, password)
         if (!email || !name || !password) {
             return res.json(404).json({
                 message: "All fields are required"
             })
         }
-
+// await User.findOne({ email: undefinedVariable });
         const existingUser = await User.findOne({ email })
         if (existingUser) {
             return res.status(301).json({
@@ -18,24 +18,27 @@ export const register = async (req, res) => {
             })
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10)
+        // const hashedPassword = await bcrypt.hash(password, 10)
         const user = await User.create({
-            name, email, password: hashedPassword
+            name, email, password
         })
-
+        // console.log("first")
         res.status(200).json({
             message: "USer created Successfully",
             // token: gt(user._id,user.email),
             user: {
                 name: user.name,
                 id: user._id,
-                email: user.email
+                email: user.email,
+                password: user.password
             }
         })
+      
     } catch (error) {
-        res.status(500).json({
-            message: error.message
-        })
+       next(error)
+    // res.status(500).json({
+    //     message:error.message
+    // })
     }
 }
 
@@ -43,7 +46,7 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        console.log(email,password)
+        console.log(email, password)
         if (!email || !password) {
             return res.status(400).json({
                 message: "Fill all credentials"
@@ -63,21 +66,22 @@ export const login = async (req, res) => {
             })
         }
 
-        const generatedToken=await gt(user._id)
+        const generatedToken = await gt(user._id)
 
-        res.status(201).cookie("token", generatedToken, { 
-             httpOnly: true,
-             secure: true,
-             sameSite: "Lax" }).
-        json({
-            message: "User succesfully logged innn ",
-            token:generatedToken ,
-            user: {
-                id: user._id,
-                email: user.email,
-                name: user.name
-            }
-        })
+        res.status(201).cookie("token", generatedToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "Lax"
+        }).
+            json({
+                message: "User succesfully logged innn ",
+                token: generatedToken,
+                user: {
+                    id: user._id,
+                    email: user.email,
+                    name: user.name
+                }
+            })
     } catch (error) {
         res.status(500).json({
             message: error.message

@@ -6,6 +6,7 @@ import authRouter from "./Routes/authRoutes.js";
 import cors from "cors"
 import { authMiddleware } from "./middleware/authMiddleware.js";
 import cookieParser from "cookie-parser";
+import { errorMiddleware } from "./middleware/errorMiddleware.js";
 const app=express()
 const port=3000
 
@@ -19,6 +20,7 @@ connectDB();
 app.use("/notes",authMiddleware,router)
 // app.use(trailMid)
 app.use("/auth",authRouter)
+app.use(errorMiddleware)
 app.listen(port,()=>{
     console.log(`PORT is : ${port}`)
 })
